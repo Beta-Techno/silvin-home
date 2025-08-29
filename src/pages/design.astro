@@ -87,12 +87,35 @@ import { siteConfig } from '../data/site';
 
 <style>
 	.hero {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		color: white;
+		background: #f8f9fa;
+		color: #101820;
 		text-align: center;
 		padding: 8rem 0 6rem;
 		position: relative;
 		overflow: hidden;
+		border-bottom: 1px solid #e9ecef;
+	}
+
+	.hero .section-title {
+		font-size: 4rem;
+		font-weight: 900;
+		margin-bottom: 1rem;
+		line-height: 1.1;
+		color: #101820;
+		position: relative;
+		z-index: 2;
+	}
+
+	.hero .section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100px;
+		height: 4px;
+		background: #84754e;
+		z-index: 2;
 	}
 
 	.hero::before {
@@ -149,8 +172,7 @@ import { siteConfig } from '../data/site';
 		left: 0;
 		right: 0;
 		height: 4px;
-		background: linear-gradient(90deg, #667eea, #764ba2);
-		border-radius: 20px 20px 0 0;
+		background: #84754e;
 	}
 
 	.form-title {
@@ -170,8 +192,7 @@ import { siteConfig } from '../data/site';
 		transform: translateX(-50%);
 		width: 60px;
 		height: 3px;
-		background: linear-gradient(90deg, #667eea, #764ba2);
-		border-radius: 2px;
+		background: #84754e;
 	}
 
 	.design-form {
@@ -221,8 +242,8 @@ import { siteConfig } from '../data/site';
 	.form-group select:focus,
 	.form-group textarea:focus {
 		outline: none;
-		border-color: #667eea;
-		box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+		border-color: #84754e;
+		box-shadow: 0 0 0 4px rgba(132, 117, 78, 0.1);
 		transform: translateY(-1px);
 	}
 
@@ -233,11 +254,11 @@ import { siteConfig } from '../data/site';
 	}
 
 	.submit-btn {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: #84754e;
 		color: white;
 		padding: 1.25rem 2.5rem;
 		border: none;
-		border-radius: 12px;
+		border-radius: 0;
 		font-size: 1.125rem;
 		font-weight: 600;
 		cursor: pointer;
@@ -246,6 +267,7 @@ import { siteConfig } from '../data/site';
 		letter-spacing: 0.025em;
 		position: relative;
 		overflow: hidden;
+		text-transform: uppercase;
 	}
 
 	.submit-btn::before {
@@ -261,7 +283,7 @@ import { siteConfig } from '../data/site';
 
 	.submit-btn:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+		box-shadow: 0 10px 25px rgba(132, 117, 78, 0.3);
 	}
 
 	.submit-btn:hover::before {

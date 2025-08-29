@@ -6,7 +6,7 @@ import { siteConfig } from '../data/site';
 <Layout title={`About - ${siteConfig.name}`}>
 	<section class="hero section">
 		<div class="container">
-			<h1 class="section-title">Lococo Development Principals</h1>
+			<h1 class="section-title">Silvin Homes Team</h1>
 		</div>
 	</section>
 
@@ -19,7 +19,7 @@ import { siteConfig } from '../data/site';
 					</div>
 					<div class="principal-content">
 						<h2 class="principal-name">Jay Lococo</h2>
-						<h3 class="principal-title">Founder of Lococo Development</h3>
+						<h3 class="principal-title">Founder of Silvin Homes</h3>
 						<div class="principal-bio">
 							<p>I've been working in construction for ten years now, focusing mostly on building new homes and renovating existing ones. Over this time, I've developed a solid understanding of what it takes to bring a project from an idea to reality. I take pride in doing things the right way and making sure my clients are satisfied with the results.</p>
 							<p>Every project is a chance to create something meaningful for someone, and that's what keeps me going. I'm more about letting the work speak for itself, knowing that the details and the care put into each job matter most. My approach is simple: listen to what people want and work hard to make it happen. It's a journey of constant learning and improvement, and I'm grateful for the trust my clients have shown me.</p>
@@ -29,14 +29,14 @@ import { siteConfig } from '../data/site';
 
 				<div class="principal-card">
 					<div class="principal-image">
-						<img src="/images/Carl.png" alt="Carl" class="profile-image">
+						<img src="/images/Carl.png" alt="Craig Nolan" class="profile-image">
 					</div>
 					<div class="principal-content">
-						<h2 class="principal-name">Roger & Roberto</h2>
-						<h3 class="principal-title">Long Time Employees</h3>
+						<h2 class="principal-name">Craig Nolan</h2>
+						<h3 class="principal-title">Project Manager</h3>
 						<div class="principal-bio">
-							<p>It takes more than one to build a home, and our team would be nothing without the people it is made of.</p>
-							<p>For the past three years there is less than a handful of projects which Carls hands have not touched. Joining us last year, Phillip works hard at any given task and is always eager to learn. Rest easy knowing your future home is in reliable hands.</p>
+							<p>Craig brings over 10 years of project management experience in residential construction and development. Known for his strong communication skills, attention to detail, and organizational leadership, Craig ensures every project runs smoothly from start to finish. His hands-on approach and commitment to excellence make him a trusted partner for homeowners, subcontractors, and the Silvin Homes team.</p>
+							<p>As a dedicated member of Silvin Homes, Craig plays a key role in coordinating schedules, managing vendors, and overseeing day-to-day operations — ensuring that every home we build meets the highest standards of quality and craftsmanship.</p>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@ import { siteConfig } from '../data/site';
 						<h2 class="principal-name">John Vecchitto</h2>
 						<h3 class="principal-title">Mortgage Broker</h3>
 						<div class="principal-bio">
-							<p>While not a direct member of Lococo Construction, our long time partner John at Elm Tree Funding is a vital part of our team.</p>
+							<p>While not a direct member of Silvin Homes, our long time partner John at Elm Tree Funding is a vital part of our team.</p>
 							<p>Our specialty is building dreams into reality. John is available for anyone in need of help financing that dream. Specializing in construction home loans, available to provide finincial advice for any prospective home owner.</p>
 						</div>
 					</div>
@@ -61,10 +61,32 @@ import { siteConfig } from '../data/site';
 
 <style>
 	.hero {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		color: white;
+		background: #f8f9fa;
+		color: #101820;
 		text-align: center;
-		padding: 8rem 0 4rem;
+		padding: 8rem 0 6rem;
+		position: relative;
+		border-bottom: 1px solid #e9ecef;
+	}
+
+	.hero .section-title {
+		font-size: 3.5rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+		color: #101820;
+		position: relative;
+	}
+
+	.hero .section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80px;
+		height: 4px;
+		background: #84754e;
 	}
 
 	.hero .section-title {
@@ -93,15 +115,33 @@ import { siteConfig } from '../data/site';
 		display: flex;
 		flex-direction: column;
 		background: white;
-		border-radius: 15px;
-		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+		border: 2px solid transparent;
 		overflow: hidden;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition: all 0.3s ease;
+		position: relative;
+	}
+
+	.principal-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: #84754e;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+		z-index: 2;
+	}
+
+	.principal-card:hover::before {
+		transform: scaleX(1);
 	}
 
 	.principal-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+		border-color: #84754e;
+		transform: translateY(-8px);
+		box-shadow: 0 20px 40px rgba(132, 117, 78, 0.15);
 	}
 
 	.principal-image {
@@ -141,7 +181,7 @@ import { siteConfig } from '../data/site';
 
 	.principal-title {
 		font-size: 1.2rem;
-		color: #007bff;
+		color: #84754e;
 		font-weight: 600;
 		margin-bottom: 2rem;
 		text-transform: uppercase;

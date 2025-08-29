@@ -108,10 +108,39 @@ import { siteConfig } from '../data/site';
 
 <style>
 	.hero {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		color: white;
+		background: #f8f9fa;
+		color: #101820;
 		text-align: center;
 		padding: 6rem 0 4rem;
+		position: relative;
+		border-bottom: 1px solid #e9ecef;
+	}
+
+	.hero .section-title {
+		font-size: 3.5rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+		color: #101820;
+		position: relative;
+	}
+
+	.hero .section-subtitle {
+		font-size: 1.25rem;
+		opacity: 0.8;
+		color: #6c757d;
+		font-weight: 500;
+	}
+
+	.hero .section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80px;
+		height: 4px;
+		background: #84754e;
 	}
 
 	.hero .section-title {
@@ -183,14 +212,14 @@ import { siteConfig } from '../data/site';
 	}
 
 	.property-item:hover {
-		border-color: #667eea;
+		border-color: #84754e;
 		transform: translateY(-2px);
-		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+		box-shadow: 0 5px 15px rgba(132, 117, 78, 0.1);
 	}
 
 	.property-item.active {
-		border-color: #667eea;
-		background: rgba(102, 126, 234, 0.05);
+		border-color: #84754e;
+		background: rgba(132, 117, 78, 0.05);
 	}
 
 	.property-info h3 {
@@ -201,7 +230,7 @@ import { siteConfig } from '../data/site';
 	}
 
 	.property-address {
-		color: #667eea;
+		color: #84754e;
 		font-weight: 500;
 		margin-bottom: 0.5rem;
 		font-size: 0.9rem;
@@ -222,21 +251,23 @@ import { siteConfig } from '../data/site';
 	}
 
 	.view-btn {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		background: #84754e;
 		color: white;
 		border: none;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 0;
 		font-size: 0.9rem;
 		font-weight: 600;
 		cursor: pointer;
 		transition: all 0.3s ease;
 		width: 100%;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
 	}
 
 	.view-btn:hover {
 		transform: translateY(-1px);
-		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+		box-shadow: 0 5px 15px rgba(132, 117, 78, 0.3);
 	}
 
 	.info-section {
@@ -408,7 +439,7 @@ import { siteConfig } from '../data/site';
 				icon: {
 					url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
 						<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="20" cy="20" r="18" fill="#667eea" stroke="white" stroke-width="2"/>
+							<circle cx="20" cy="20" r="18" fill="#84754e" stroke="white" stroke-width="2"/>
 							<text x="20" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">${index + 1}</text>
 						</svg>
 					`),
@@ -421,7 +452,7 @@ import { siteConfig } from '../data/site';
 				content: `
 					<div style="padding: 10px; max-width: 250px;">
 						<h3 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px;">${location.title}</h3>
-						<p style="margin: 0 0 5px 0; color: #667eea; font-weight: 500; font-size: 14px;">${location.address}</p>
+						<p style="margin: 0 0 5px 0; color: #84754e; font-weight: 500; font-size: 14px;">${location.address}</p>
 						<p style="margin: 0 0 8px 0; color: #4a5568; font-size: 12px; line-height: 1.4;">${location.details}</p>
 						<div style="font-size: 18px; font-weight: 700; color: #2d3748;">${location.price}</div>
 					</div>

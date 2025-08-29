@@ -6,7 +6,7 @@ import { siteConfig } from '../data/site';
 <Layout title={`${siteConfig.name} - ${siteConfig.description}`}>
 	<section class="hero">
 		<div class="hero-background">
-			<img src="/images/BlueHouse.jpg" alt="Blue House" class="hero-image">
+			<img src="/images/ColonialRender.jpg" alt="Colonial Home" class="hero-image">
 			<div class="hero-overlay"></div>
 		</div>
 		<div class="container">
@@ -37,12 +37,9 @@ import { siteConfig } from '../data/site';
 
 	<section class="company-intro section">
 		<div class="container">
-			<h2 class="company-title">Lococo Development</h2>
+			<h2 class="company-title">Silvin Homes</h2>
 			<div class="company-text">
-				<p>Welcome to our construction company, where we specialize in building new homes tailored to your dreams and lifestyle.</p>
-				<p>With a commitment to quality craftsmanship and attention to detail, we transform your vision into reality, creating spaces that are both functional and beautiful.</p>
-				<p>In addition to new constructions, we offer comprehensive house renovation and repair services to enhance and maintain your home's value.</p>
-				<p>Whether you're looking to modernize your kitchen, expand your living space, or fix structural issues, our expert team is here to deliver exceptional results, ensuring your home remains your sanctuary.</p>
+				<p>Silvin Homes is a trusted home builder, delivering quality craftsmanship, modern design, and lasting value for families across Connecticut.</p>
 			</div>
 		</div>
 	</section>
@@ -59,19 +56,25 @@ import { siteConfig } from '../data/site';
 
 	<section class="clients section">
 		<div class="container">
-			<h2 class="section-title">Our Clients</h2>
+			<h2 class="section-title">Our Vendors</h2>
 			<div class="clients-grid">
 				<div class="client-card">
-					<div class="client-logo">DAmico</div>
-					<p>Trusted partner in residential development</p>
+					<div class="client-logo">
+						<img src="/images/abcsupplycoinc.svg" alt="ABC Supply" class="vendor-logo">
+					</div>
+					<p>Quality building materials and supplies</p>
 				</div>
 				<div class="client-card">
-					<div class="client-logo">NewGen</div>
-					<p>Innovative solutions for modern living</p>
+					<div class="client-logo">
+						<img src="/images/lansingbuildingproducts.png" alt="Lansing Building Products" class="vendor-logo">
+					</div>
+					<p>Professional building products and solutions</p>
 				</div>
 				<div class="client-card">
-					<div class="client-logo">Kalart</div>
-					<p>Excellence in architectural design</p>
+					<div class="client-logo">
+						<img src="/images/bender.png" alt="Bender Plumbing" class="vendor-logo">
+					</div>
+					<p>Expert plumbing services and installations</p>
 				</div>
 			</div>
 		</div>
@@ -82,9 +85,12 @@ import { siteConfig } from '../data/site';
 	.hero {
 		position: relative;
 		color: white;
-		padding: 8rem 0 4rem;
+		padding: 12rem 0 8rem;
 		text-align: center;
 		overflow: hidden;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
 	}
 
 	.hero-background {
@@ -109,7 +115,7 @@ import { siteConfig } from '../data/site';
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, 0.4);
+		background: rgba(16, 24, 32, 0.7);
 		z-index: -1;
 	}
 
@@ -138,23 +144,42 @@ import { siteConfig } from '../data/site';
 	.hero-options {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 2rem;
+		gap: 3rem;
+		max-width: 1200px;
+		margin: 0 auto;
 	}
 
 	.option-card {
-		background: rgba(255, 255, 255, 0.95);
-		color: #333;
-		padding: 2rem;
-		border-radius: 15px;
+		background: #ffffff;
+		color: #101820;
+		padding: 3rem 2rem;
+		border: 2px solid transparent;
 		text-align: center;
-		backdrop-filter: blur(10px);
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.option-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: #84754e;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	.option-card:hover::before {
+		transform: scaleX(1);
 	}
 
 	.option-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+		border-color: #84754e;
+		transform: translateY(-8px);
+		box-shadow: 0 20px 40px rgba(132, 117, 78, 0.15);
 	}
 
 	.option-icon {
@@ -165,18 +190,19 @@ import { siteConfig } from '../data/site';
 	.option-card h3 {
 		font-size: 1.5rem;
 		margin-bottom: 1rem;
-		color: #333;
-		font-weight: 600;
+		color: #101820;
+		font-weight: 700;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
 	.option-card p {
-		color: #666;
+		color: #84754e;
 		line-height: 1.6;
 		margin-bottom: 1.5rem;
 	}
 
 	.option-card .btn {
-		background: #007bff;
+		background: #84754e;
 		color: white;
 		padding: 0.75rem 1.5rem;
 		text-decoration: none;
@@ -187,22 +213,34 @@ import { siteConfig } from '../data/site';
 	}
 
 	.option-card .btn:hover {
-		background: #0056b3;
+		background: #6b6140;
 	}
 
 	.company-intro {
-		background: white;
-		padding: 6rem 0;
+		background: #f8f9fa;
+		padding: 8rem 0;
 		text-align: center;
+		position: relative;
+	}
+
+	.company-intro::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: #84754e;
 	}
 
 	.company-title {
 		font-size: 3rem;
-		font-weight: 700;
-		color: #333;
+		font-weight: 900;
+		color: #101820;
 		margin-bottom: 3rem;
 		text-transform: uppercase;
 		letter-spacing: 2px;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
 	.company-text {
@@ -214,14 +252,17 @@ import { siteConfig } from '../data/site';
 	.company-text p {
 		font-size: 1.2rem;
 		line-height: 1.8;
-		color: #555;
+		color: #84754e;
 		margin-bottom: 1.5rem;
+		font-weight: 400;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
 	.blueprint-section {
 		position: relative;
-		height: 500px;
+		height: 600px;
 		overflow: hidden;
+		background: #101820;
 	}
 
 	.blueprint-background {
@@ -238,6 +279,7 @@ import { siteConfig } from '../data/site';
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
+		opacity: 0.3;
 	}
 
 	.blueprint-overlay {
@@ -246,7 +288,7 @@ import { siteConfig } from '../data/site';
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(16, 24, 32, 0.8);
 		z-index: -1;
 	}
 
@@ -262,18 +304,30 @@ import { siteConfig } from '../data/site';
 
 	.blueprint-title {
 		font-size: 4rem;
-		font-weight: 700;
+		font-weight: 900;
 		color: white;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 		line-height: 1.2;
 		letter-spacing: 3px;
 		text-transform: uppercase;
 		margin: 0;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
 	.clients {
-		background: white;
-		padding: 6rem 0;
+		background: #ffffff;
+		padding: 8rem 0;
+		position: relative;
+	}
+
+	.clients::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: #84754e;
 	}
 
 	.clients-grid {
@@ -285,24 +339,47 @@ import { siteConfig } from '../data/site';
 
 	.client-card {
 		text-align: center;
-		padding: 2rem;
-		border: 2px solid #f0f0f0;
-		border-radius: 15px;
+		padding: 3rem 2rem;
+		border: 2px solid transparent;
 		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.client-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: #84754e;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	.client-card:hover::before {
+		transform: scaleX(1);
 	}
 
 	.client-card:hover {
-		border-color: #007bff;
-		transform: translateY(-5px);
-		box-shadow: 0 8px 25px rgba(0, 123, 255, 0.1);
+		border-color: #84754e;
+		transform: translateY(-8px);
+		box-shadow: 0 20px 40px rgba(132, 117, 78, 0.1);
 	}
 
 	.client-logo {
-		font-size: 2.5rem;
-		font-weight: 700;
-		color: #007bff;
 		margin-bottom: 1rem;
-		letter-spacing: 1px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 60px;
+	}
+
+	.vendor-logo {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
 	}
 
 	.client-card p {

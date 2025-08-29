@@ -117,9 +117,39 @@ import { siteConfig } from '../data/site';
 
 <style>
 	.hero {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		color: white;
+		background: #f8f9fa;
+		color: #101820;
 		text-align: center;
+		position: relative;
+		padding: 6rem 0 4rem;
+		border-bottom: 1px solid #e9ecef;
+	}
+
+	.hero .section-title {
+		font-size: 3.5rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+		color: #101820;
+		position: relative;
+	}
+
+	.hero .section-subtitle {
+		font-size: 1.3rem;
+		opacity: 0.8;
+		color: #6c757d;
+		font-weight: 500;
+	}
+
+	.hero .section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80px;
+		height: 4px;
+		background: #84754e;
 	}
 
 	.contact-grid {
@@ -173,7 +203,7 @@ import { siteConfig } from '../data/site';
 	.form-group select:focus,
 	.form-group textarea:focus {
 		outline: none;
-		border-color: #007bff;
+		border-color: #84754e;
 	}
 
 	.form-group textarea {
@@ -182,7 +212,7 @@ import { siteConfig } from '../data/site';
 	}
 
 	.btn-submit {
-		background: #007bff;
+		background: #84754e;
 		color: white;
 		padding: 1rem 2rem;
 		border: none;
@@ -194,7 +224,7 @@ import { siteConfig } from '../data/site';
 	}
 
 	.btn-submit:hover {
-		background: #0056b3;
+		background: #6b6140;
 	}
 
 	.contact-info {
@@ -223,13 +253,13 @@ import { siteConfig } from '../data/site';
 	}
 
 	.info-content a {
-		color: #007bff;
+		color: #84754e;
 		text-decoration: none;
 		transition: color 0.3s ease;
 	}
 
 	.info-content a:hover {
-		color: #0056b3;
+		color: #6b6140;
 	}
 
 	.info-content p {

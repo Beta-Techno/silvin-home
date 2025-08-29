@@ -45,11 +45,11 @@ const currentPath = Astro.url.pathname;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-bottom: 2px solid #101820;
     z-index: 1000;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 20px rgba(16, 24, 32, 0.1);
   }
 
   .container {
@@ -72,8 +72,9 @@ const currentPath = Astro.url.pathname;
 
   .logo-text {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: #333;
+    font-weight: 800;
+    color: #101820;
+    font-family: 'Sinkin Sans', system-ui, sans-serif;
   }
 
   .navigation {
@@ -91,15 +92,16 @@ const currentPath = Astro.url.pathname;
 
   .nav-link {
     text-decoration: none;
-    color: #333;
+    color: #101820;
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    font-family: 'Sinkin Sans', system-ui, sans-serif;
   }
 
   .nav-link:hover,
   .nav-link.active {
-    color: #007bff;
+    color: #84754e;
   }
 
   .nav-link.active::after {
@@ -108,8 +110,26 @@ const currentPath = Astro.url.pathname;
     bottom: -5px;
     left: 0;
     right: 0;
-    height: 2px;
-    background: #007bff;
+    height: 3px;
+    background: #84754e;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #84754e;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
   }
 
   .mobile-menu-toggle {
@@ -124,7 +144,7 @@ const currentPath = Astro.url.pathname;
   .hamburger {
     width: 25px;
     height: 3px;
-    background: #333;
+    background: #101820;
     margin: 3px 0;
     transition: 0.3s;
   }

@@ -30,7 +30,7 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Lococo Home",
+  name: "Silvin Homes",
   description: "Your trusted partner for home design and renovation",
   navigation: [
     { title: "About", href: "/about" },
