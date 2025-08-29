@@ -1,0 +1,204 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout title={`About - ${siteConfig.name}`}>
+	<section class="hero section">
+		<div class="container">
+			<h1 class="section-title">Lococo Development Principals</h1>
+		</div>
+	</section>
+
+	<section class="principals section">
+		<div class="container">
+			<div class="principals-grid">
+				<div class="principal-card">
+					<div class="principal-image">
+						<img src="/images/Jayden.png" alt="Jay Lococo" class="profile-image">
+					</div>
+					<div class="principal-content">
+						<h2 class="principal-name">Jay Lococo</h2>
+						<h3 class="principal-title">Founder of Lococo Development</h3>
+						<div class="principal-bio">
+							<p>I've been working in construction for ten years now, focusing mostly on building new homes and renovating existing ones. Over this time, I've developed a solid understanding of what it takes to bring a project from an idea to reality. I take pride in doing things the right way and making sure my clients are satisfied with the results.</p>
+							<p>Every project is a chance to create something meaningful for someone, and that's what keeps me going. I'm more about letting the work speak for itself, knowing that the details and the care put into each job matter most. My approach is simple: listen to what people want and work hard to make it happen. It's a journey of constant learning and improvement, and I'm grateful for the trust my clients have shown me.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="principal-card">
+					<div class="principal-image">
+						<img src="/images/Carl.png" alt="Carl" class="profile-image">
+					</div>
+					<div class="principal-content">
+						<h2 class="principal-name">Roger & Roberto</h2>
+						<h3 class="principal-title">Long Time Employees</h3>
+						<div class="principal-bio">
+							<p>It takes more than one to build a home, and our team would be nothing without the people it is made of.</p>
+							<p>For the past three years there is less than a handful of projects which Carls hands have not touched. Joining us last year, Phillip works hard at any given task and is always eager to learn. Rest easy knowing your future home is in reliable hands.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="principal-card">
+					<div class="principal-image">
+						<img src="/images/JohnVecchitto.png" alt="John Vecchitto" class="profile-image">
+					</div>
+					<div class="principal-content">
+						<h2 class="principal-name">John Vecchitto</h2>
+						<h3 class="principal-title">Mortgage Broker</h3>
+						<div class="principal-bio">
+							<p>While not a direct member of Lococo Construction, our long time partner John at Elm Tree Funding is a vital part of our team.</p>
+							<p>Our specialty is building dreams into reality. John is available for anyone in need of help financing that dream. Specializing in construction home loans, available to provide finincial advice for any prospective home owner.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		text-align: center;
+		padding: 8rem 0 4rem;
+	}
+
+	.hero .section-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	.principals {
+		background: white;
+		padding: 6rem 0;
+	}
+
+	.principals-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
+		margin-top: 3rem;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.principal-card {
+		display: flex;
+		flex-direction: column;
+		background: white;
+		border-radius: 15px;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.principal-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+	}
+
+	.principal-image {
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+		background: #f8f9fa;
+	}
+
+	.profile-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+		transition: transform 0.3s ease;
+	}
+
+	.principal-card:hover .profile-image {
+		transform: scale(1.05);
+	}
+
+	.principal-content {
+		padding: 3rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.principal-name {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #333;
+		margin-bottom: 0.5rem;
+		text-align: center;
+	}
+
+	.principal-title {
+		font-size: 1.2rem;
+		color: #007bff;
+		font-weight: 600;
+		margin-bottom: 2rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		text-align: center;
+	}
+
+	.principal-bio {
+		text-align: left;
+	}
+
+	.principal-bio p {
+		font-size: 1.1rem;
+		line-height: 1.7;
+		color: #555;
+		margin-bottom: 1.5rem;
+	}
+
+	.principal-bio p:last-child {
+		margin-bottom: 0;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 6rem 0 3rem;
+		}
+
+		.hero .section-title {
+			font-size: 2.5rem;
+		}
+
+		.principals {
+			padding: 4rem 0;
+		}
+
+		.principals-grid {
+			gap: 3rem;
+		}
+
+		.principal-image {
+			height: 300px;
+		}
+
+		.principal-content {
+			padding: 2rem;
+		}
+
+		.principal-name {
+			font-size: 2rem;
+		}
+
+		.principal-title {
+			font-size: 1.1rem;
+		}
+
+		.principal-bio p {
+			font-size: 1rem;
+		}
+	}
+</style> 

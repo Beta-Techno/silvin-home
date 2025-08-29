@@ -1,0 +1,498 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout title={`Available Properties - ${siteConfig.name}`}>
+	<section class="hero section">
+		<div class="container">
+			<h1 class="section-title">Available Properties</h1>
+			<p class="section-subtitle">Explore our available lots and properties across Connecticut</p>
+		</div>
+	</section>
+
+	<section class="map-section section">
+		<div class="container">
+			<div class="map-content">
+				<div class="map-container">
+					<div id="map" class="google-map"></div>
+				</div>
+				<div class="properties-sidebar">
+					<h2 class="sidebar-title">Available Locations</h2>
+					<div class="property-list">
+						<div class="property-item" data-location="0">
+							<div class="property-info">
+								<h3>Hartford Downtown Development</h3>
+								<p class="property-address">Hartford, CT</p>
+								<p class="property-details">1.2 acres • Urban center • Mixed-use potential</p>
+								<div class="property-price">$1,800,000</div>
+							</div>
+							<button class="view-btn" data-location="0">View on Map</button>
+						</div>
+
+						<div class="property-item" data-location="1">
+							<div class="property-info">
+								<h3>New Haven University District</h3>
+								<p class="property-address">New Haven, CT</p>
+								<p class="property-details">0.9 acres • Academic area • Student housing potential</p>
+								<div class="property-price">$1,400,000</div>
+							</div>
+							<button class="view-btn" data-location="1">View on Map</button>
+						</div>
+
+						<div class="property-item" data-location="2">
+							<div class="property-info">
+								<h3>Waterbury Industrial Site</h3>
+								<p class="property-address">Waterbury, CT</p>
+								<p class="property-details">2.1 acres • Industrial zone • Manufacturing potential</p>
+								<div class="property-price">$950,000</div>
+							</div>
+							<button class="view-btn" data-location="2">View on Map</button>
+						</div>
+
+						<div class="property-item" data-location="3">
+							<div class="property-info">
+								<h3>Bridgeport Harbor Property</h3>
+								<p class="property-address">Bridgeport, CT</p>
+								<p class="property-details">1.8 acres • Waterfront location • Marina potential</p>
+								<div class="property-price">$1,600,000</div>
+							</div>
+							<button class="view-btn" data-location="3">View on Map</button>
+						</div>
+
+						<div class="property-item" data-location="4">
+							<div class="property-info">
+								<h3>Danbury Corporate Campus</h3>
+								<p class="property-address">Danbury, CT</p>
+								<p class="property-details">3.5 acres • Business district • Office complex potential</p>
+								<div class="property-price">$2,200,000</div>
+							</div>
+							<button class="view-btn" data-location="4">View on Map</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="info-section section">
+		<div class="container">
+			<div class="info-content">
+				<h2>Why Choose Our Properties?</h2>
+				<div class="features-grid">
+					<div class="feature">
+						<div class="feature-icon">🏗️</div>
+						<h3>Ready to Build</h3>
+						<p>All properties are pre-approved and ready for construction to begin immediately.</p>
+					</div>
+					<div class="feature">
+						<div class="feature-icon">📍</div>
+						<h3>Prime Locations</h3>
+						<p>Carefully selected locations in Connecticut's most desirable communities.</p>
+					</div>
+					<div class="feature">
+						<div class="feature-icon">💰</div>
+						<h3>Competitive Pricing</h3>
+						<p>Fair market pricing with flexible financing options available.</p>
+					</div>
+					<div class="feature">
+						<div class="feature-icon">📋</div>
+						<h3>Full Support</h3>
+						<p>Complete assistance with permits, design, and construction from start to finish.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		text-align: center;
+		padding: 6rem 0 4rem;
+	}
+
+	.hero .section-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	.hero .section-subtitle {
+		font-size: 1.25rem;
+		opacity: 0.9;
+	}
+
+	.map-section {
+		background: #f8f9fa;
+		padding: 4rem 0;
+	}
+
+	.map-content {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 3rem;
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.map-container {
+		background: white;
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	.google-map {
+		width: 100%;
+		height: 600px;
+		border-radius: 15px;
+	}
+
+	.properties-sidebar {
+		background: white;
+		border-radius: 15px;
+		padding: 2rem;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		height: fit-content;
+	}
+
+	.sidebar-title {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: #1a1a1a;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.property-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.property-item {
+		border: 2px solid #e2e8f0;
+		border-radius: 12px;
+		padding: 1.5rem;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.property-item:hover {
+		border-color: #667eea;
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+	}
+
+	.property-item.active {
+		border-color: #667eea;
+		background: rgba(102, 126, 234, 0.05);
+	}
+
+	.property-info h3 {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #1a1a1a;
+		margin-bottom: 0.5rem;
+	}
+
+	.property-address {
+		color: #667eea;
+		font-weight: 500;
+		margin-bottom: 0.5rem;
+		font-size: 0.9rem;
+	}
+
+	.property-details {
+		color: #4a5568;
+		font-size: 0.85rem;
+		margin-bottom: 1rem;
+		line-height: 1.4;
+	}
+
+	.property-price {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #2d3748;
+		margin-bottom: 1rem;
+	}
+
+	.view-btn {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		border: none;
+		padding: 0.75rem 1.5rem;
+		border-radius: 8px;
+		font-size: 0.9rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		width: 100%;
+	}
+
+	.view-btn:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+	}
+
+	.info-section {
+		background: white;
+		padding: 6rem 0;
+	}
+
+	.info-content h2 {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #1a1a1a;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.feature {
+		text-align: center;
+		padding: 2rem;
+		background: #f8f9fa;
+		border-radius: 15px;
+		transition: transform 0.3s ease;
+	}
+
+	.feature:hover {
+		transform: translateY(-5px);
+	}
+
+	.feature-icon {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.feature h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #1a1a1a;
+		margin-bottom: 1rem;
+	}
+
+	.feature p {
+		color: #4a5568;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 1024px) {
+		.map-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.google-map {
+			height: 500px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero .section-title {
+			font-size: 2.5rem;
+		}
+
+		.hero .section-subtitle {
+			font-size: 1.1rem;
+		}
+
+		.map-section {
+			padding: 3rem 0;
+		}
+
+		.google-map {
+			height: 400px;
+		}
+
+		.properties-sidebar {
+			padding: 1.5rem;
+		}
+
+		.property-item {
+			padding: 1.25rem;
+		}
+
+		.info-content h2 {
+			font-size: 2rem;
+		}
+
+		.features-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	// Google Maps API Key
+	const GOOGLE_MAPS_API_KEY = 'AIzaSyCBVHEO0SiHLqVGwwLWcgJYD70OQ9lXg68';
+
+	// Connecticut property locations (Central CT)
+	const locations = [
+		{
+			position: { lat: 41.7658, lng: -72.6734 }, // Hartford
+			title: 'Hartford Downtown Development',
+			address: 'Hartford, CT',
+			details: '1.2 acres • Urban center • Mixed-use potential',
+			price: '$1,800,000'
+		},
+		{
+			position: { lat: 41.3083, lng: -72.9279 }, // New Haven
+			title: 'New Haven University District',
+			address: 'New Haven, CT',
+			details: '0.9 acres • Academic area • Student housing potential',
+			price: '$1,400,000'
+		},
+		{
+			position: { lat: 41.5582, lng: -73.0515 }, // Waterbury
+			title: 'Waterbury Industrial Site',
+			address: 'Waterbury, CT',
+			details: '2.1 acres • Industrial zone • Manufacturing potential',
+			price: '$950,000'
+		},
+		{
+			position: { lat: 41.3501, lng: -73.0634 }, // Bridgeport
+			title: 'Bridgeport Harbor Property',
+			address: 'Bridgeport, CT',
+			details: '1.8 acres • Waterfront location • Marina potential',
+			price: '$1,600,000'
+		},
+		{
+			position: { lat: 41.3969, lng: -73.4548 }, // Danbury
+			title: 'Danbury Corporate Campus',
+			address: 'Danbury, CT',
+			details: '3.5 acres • Business district • Office complex potential',
+			price: '$2,200,000'
+		}
+	];
+
+	let map: any;
+	let markers: any[] = [];
+	let infoWindows: any[] = [];
+
+	// Initialize the map
+	function initMap(): void {
+		// Center map on Connecticut
+		const connecticut = { lat: 41.6032, lng: -73.0877 };
+
+		map = new (window as any).google.maps.Map(document.getElementById('map') as HTMLElement, {
+			zoom: 9,
+			center: connecticut,
+			styles: [
+				{
+					featureType: 'poi',
+					elementType: 'labels',
+					stylers: [{ visibility: 'off' }]
+				}
+			]
+		});
+
+		// Add markers for each location
+		locations.forEach((location, index) => {
+			const marker = new (window as any).google.maps.Marker({
+				position: location.position,
+				map: map,
+				title: location.title,
+				icon: {
+					url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+						<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="20" cy="20" r="18" fill="#667eea" stroke="white" stroke-width="2"/>
+							<text x="20" y="25" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">${index + 1}</text>
+						</svg>
+					`),
+					scaledSize: new (window as any).google.maps.Size(40, 40),
+					anchor: new (window as any).google.maps.Point(20, 20)
+				}
+			});
+
+			const infoWindow = new (window as any).google.maps.InfoWindow({
+				content: `
+					<div style="padding: 10px; max-width: 250px;">
+						<h3 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px;">${location.title}</h3>
+						<p style="margin: 0 0 5px 0; color: #667eea; font-weight: 500; font-size: 14px;">${location.address}</p>
+						<p style="margin: 0 0 8px 0; color: #4a5568; font-size: 12px; line-height: 1.4;">${location.details}</p>
+						<div style="font-size: 18px; font-weight: 700; color: #2d3748;">${location.price}</div>
+					</div>
+				`
+			});
+
+			marker.addListener('click', () => {
+				// Close all other info windows
+				infoWindows.forEach(window => window.close());
+				// Open this info window
+				infoWindow.open(map, marker);
+				// Highlight corresponding property item
+				highlightPropertyItem(index);
+			});
+
+			markers.push(marker);
+			infoWindows.push(infoWindow);
+		});
+	}
+
+	// Highlight property item in sidebar
+	function highlightPropertyItem(index: number): void {
+		// Remove active class from all items
+		document.querySelectorAll('.property-item').forEach(item => {
+			item.classList.remove('active');
+		});
+		// Add active class to selected item
+		const selectedItem = document.querySelector(`[data-location="${index}"]`);
+		if (selectedItem) {
+			selectedItem.classList.add('active');
+		}
+	}
+
+	// Handle view button clicks
+	function handleViewButtonClick(index: number): void {
+		// Close all info windows
+		infoWindows.forEach(window => window.close());
+		// Open info window for selected location
+		infoWindows[index].open(map, markers[index]);
+		// Pan to marker
+		map.panTo(locations[index].position);
+		map.setZoom(13);
+		// Highlight property item
+		highlightPropertyItem(index);
+	}
+
+	// Initialize when DOM is loaded
+	document.addEventListener('DOMContentLoaded', () => {
+		// Add click listeners to view buttons
+		document.querySelectorAll('.view-btn').forEach((button, index) => {
+			button.addEventListener('click', () => handleViewButtonClick(index));
+		});
+
+		// Add click listeners to property items
+		document.querySelectorAll('.property-item').forEach((item, index) => {
+			item.addEventListener('click', () => handleViewButtonClick(index));
+		});
+	});
+
+	// Make initMap globally available
+	(window as any).initMap = initMap;
+
+	// Load Google Maps API
+	function loadGoogleMapsAPI(): void {
+		const script = document.createElement('script');
+		script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&callback=initMap&loading=async`;
+		script.async = true;
+		script.defer = true;
+		document.head.appendChild(script);
+	}
+
+	// Load the API when the page loads
+	loadGoogleMapsAPI();
+</script> 

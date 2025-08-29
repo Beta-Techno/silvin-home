@@ -1,0 +1,219 @@
+---
+import { siteConfig } from '../data/site';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">{siteConfig.name}</h3>
+        <p class="footer-description">{siteConfig.description}</p>
+        <div class="social-links">
+          {Object.entries(siteConfig.social).map(([platform, url]) => (
+            url && (
+              <a 
+                href={url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label={`Follow us on ${platform}`}
+              >
+                <span class="social-icon">{platform.charAt(0).toUpperCase()}</span>
+              </a>
+            )
+          ))}
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Quick Links</h4>
+        <ul class="footer-nav">
+          {siteConfig.navigation.map((item) => (
+            <li class="footer-nav-item">
+              <a href={item.href} class="footer-nav-link">
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Contact Info</h4>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-label">Email:</span>
+            <a href={`mailto:${siteConfig.contact.email}`} class="contact-link">
+              {siteConfig.contact.email}
+            </a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Phone:</span>
+            <a href={`tel:${siteConfig.contact.phone}`} class="contact-link">
+              {siteConfig.contact.phone}
+            </a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Address:</span>
+            <span class="contact-text">{siteConfig.contact.address}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        © {currentYear} {siteConfig.name}. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: #fff;
+  }
+
+  .footer-description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    color: #fff;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .social-link:hover {
+    background: #007bff;
+  }
+
+  .social-icon {
+    font-weight: 600;
+  }
+
+  .footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-nav-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-nav-link {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-nav-link:hover {
+    color: #007bff;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .contact-label {
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .contact-link {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .contact-link:hover {
+    color: #007bff;
+  }
+
+  .contact-text {
+    color: #ccc;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  .copyright {
+    color: #999;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .footer {
+      padding: 2rem 0 1rem;
+    }
+  }
+</style> 

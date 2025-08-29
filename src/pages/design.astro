@@ -1,0 +1,423 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout title={`Design Services - ${siteConfig.name}`}>
+	<section class="hero section">
+		<div class="container">
+			<h1 class="section-title">Design your dream home</h1>
+		</div>
+	</section>
+
+	<section class="design-content section">
+		<div class="container">
+			<div class="content-grid">
+				<div class="form-section">
+					<h2 class="form-title">Get Started</h2>
+					<form class="design-form" id="designForm">
+						<div class="form-group">
+							<label for="location">Location</label>
+							<input type="text" id="location" name="location" placeholder="Enter your location" required>
+						</div>
+						<div class="form-group">
+							<label for="type">Type</label>
+							<select id="type" name="type" required>
+								<option value="">Select type</option>
+								<option value="new-construction">New Construction</option>
+								<option value="renovation">Renovation</option>
+								<option value="addition">Addition</option>
+								<option value="remodel">Remodel</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="rooms">Rooms</label>
+							<input type="number" id="rooms" name="rooms" min="1" max="20" placeholder="Number of rooms" required>
+						</div>
+						<div class="form-group">
+							<label for="budget">Budget</label>
+							<select id="budget" name="budget" required>
+								<option value="">Select budget range</option>
+								<option value="under-100k">Under $100,000</option>
+								<option value="100k-250k">$100,000 - $250,000</option>
+								<option value="250k-500k">$250,000 - $500,000</option>
+								<option value="500k-1m">$500,000 - $1,000,000</option>
+								<option value="over-1m">Over $1,000,000</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="fullName">Full Name</label>
+							<input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email Address</label>
+							<input type="email" id="email" name="email" placeholder="Enter your email address" required>
+						</div>
+						<div class="form-group">
+							<label for="notes">Notes</label>
+							<textarea id="notes" name="notes" rows="4" placeholder="Tell us about your vision, preferences, and any specific requirements..."></textarea>
+						</div>
+						<button type="submit" class="submit-btn">Submit Request</button>
+					</form>
+				</div>
+
+				<div class="video-section">
+					<div class="video-container">
+						<div style="padding:56.25% 0 0 0;position:relative;">
+							<iframe 
+								src="https://player.vimeo.com/video/1111399591?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+								frameborder="0" 
+								allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+								referrerpolicy="strict-origin-when-cross-origin" 
+								style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+								title="Blueprint2d3d">
+							</iframe>
+						</div>
+						<script src="https://player.vimeo.com/api/player.js"></script>
+					</div>
+					<div class="video-caption">
+						<h3>See Our Process</h3>
+						<p>Watch how we transform blueprints into beautiful homes</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		text-align: center;
+		padding: 8rem 0 6rem;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.1);
+		z-index: 1;
+	}
+
+	.hero .container {
+		position: relative;
+		z-index: 2;
+	}
+
+	.hero .section-title {
+		font-size: 4rem;
+		font-weight: 800;
+		margin-bottom: 1.5rem;
+		line-height: 1.1;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	}
+
+	.design-content {
+		background: #fafbfc;
+		padding: 8rem 0;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 5rem;
+		align-items: start;
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.form-section {
+		background: white;
+		padding: 3.5rem;
+		border-radius: 20px;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+		border: 1px solid rgba(0, 0, 0, 0.05);
+		position: relative;
+	}
+
+	.form-section::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(90deg, #667eea, #764ba2);
+		border-radius: 20px 20px 0 0;
+	}
+
+	.form-title {
+		font-size: 2.25rem;
+		font-weight: 700;
+		color: #1a1a1a;
+		margin-bottom: 2.5rem;
+		text-align: center;
+		position: relative;
+	}
+
+	.form-title::after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		background: linear-gradient(90deg, #667eea, #764ba2);
+		border-radius: 2px;
+	}
+
+	.design-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.75rem;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.form-group label {
+		font-weight: 600;
+		color: #2d3748;
+		font-size: 1rem;
+		letter-spacing: 0.025em;
+	}
+
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		padding: 1rem 1.25rem;
+		border: 2px solid #e2e8f0;
+		border-radius: 12px;
+		font-size: 1rem;
+		transition: all 0.3s ease;
+		background: white;
+		color: #2d3748;
+		font-family: inherit;
+	}
+
+	.form-group input::placeholder,
+	.form-group textarea::placeholder {
+		color: #a0aec0;
+	}
+
+	.form-group input:hover,
+	.form-group select:hover,
+	.form-group textarea:hover {
+		border-color: #cbd5e0;
+	}
+
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: #667eea;
+		box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+		transform: translateY(-1px);
+	}
+
+	.form-group textarea {
+		resize: vertical;
+		min-height: 120px;
+		line-height: 1.6;
+	}
+
+	.submit-btn {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		padding: 1.25rem 2.5rem;
+		border: none;
+		border-radius: 12px;
+		font-size: 1.125rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		margin-top: 1.5rem;
+		letter-spacing: 0.025em;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.submit-btn::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+		transition: left 0.5s;
+	}
+
+	.submit-btn:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+	}
+
+	.submit-btn:hover::before {
+		left: 100%;
+	}
+
+	.submit-btn:active {
+		transform: translateY(0);
+	}
+
+	.video-section {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.video-container {
+		width: 100%;
+		border-radius: 20px;
+		overflow: hidden;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+		position: relative;
+	}
+
+	.video-container::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	.video-caption {
+		text-align: center;
+		padding: 0 1rem;
+	}
+
+	.video-caption h3 {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: #1a1a1a;
+		margin-bottom: 0.75rem;
+	}
+
+	.video-caption p {
+		font-size: 1.1rem;
+		color: #4a5568;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	@media (max-width: 1024px) {
+		.content-grid {
+			gap: 4rem;
+		}
+
+		.form-section {
+			padding: 3rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 6rem 0 4rem;
+		}
+
+		.hero .section-title {
+			font-size: 2.75rem;
+		}
+
+		.design-content {
+			padding: 6rem 0;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+			gap: 4rem;
+		}
+
+		.form-section {
+			padding: 2.5rem;
+		}
+
+		.form-title {
+			font-size: 2rem;
+		}
+
+		.design-form {
+			gap: 1.5rem;
+		}
+
+		.form-group input,
+		.form-group select,
+		.form-group textarea {
+			padding: 0.875rem 1rem;
+		}
+
+		.submit-btn {
+			padding: 1rem 2rem;
+			font-size: 1rem;
+		}
+
+		.video-caption h3 {
+			font-size: 1.5rem;
+		}
+
+		.video-caption p {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero .section-title {
+			font-size: 2.25rem;
+		}
+
+		.form-section {
+			padding: 2rem;
+		}
+
+		.form-title {
+			font-size: 1.75rem;
+		}
+
+		.content-grid {
+			gap: 3rem;
+		}
+	}
+</style>
+
+<script>
+	// Form submission handling
+	document.addEventListener('DOMContentLoaded', () => {
+		const form = document.getElementById('designForm') as HTMLFormElement | null;
+		
+		if (form) {
+			form.addEventListener('submit', (e) => {
+				e.preventDefault();
+				
+				// Get form data
+				const formData = new FormData(form);
+				const data = Object.fromEntries(formData);
+				
+				// Here you would typically send the data to your backend
+				console.log('Design form submitted:', data);
+				
+				// Show success message
+				alert('Thank you for your design request! We will get back to you soon.');
+				
+				// Reset form
+				form.reset();
+			});
+		}
+	});
+</script> 

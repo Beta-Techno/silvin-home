@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../data/site';
+---
+
+<Layout title={`Our Projects - ${siteConfig.name}`}>
+	<section class="hero section">
+		<div class="container">
+			<h1 class="section-title">Our Projects</h1>
+			<p class="section-subtitle">Showcasing our finest work and transformations</p>
+		</div>
+	</section>
+
+	<section class="projects section">
+		<div class="container">
+			<div class="project-item">
+				<div class="project-content">
+					<h2 class="project-title">New Interior Construction</h2>
+					<div class="project-description">
+						<p>Our skilled team excels at transforming spaces into stunning, functional environments tailored to our clients' needs. From luxurious bathroom renovations to eye-catching entryway makeovers and cozy yet modern living room upgrades, we bring creativity and precision to every project.</p>
+						<p>We pride ourselves on our attention to detail, seamlessly blending aesthetics with practicality. Whether it's installing custom fixtures, crafting beautiful tilework, or building bespoke entertainment centers, our craftsmanship shines through in every aspect of our work.</p>
+					</div>
+				</div>
+				<div class="project-image">
+					<img src="/images/fancy1.jpg" alt="New Interior Construction" class="project-img">
+				</div>
+			</div>
+
+			<div class="project-item reverse">
+				<div class="project-content">
+					<h2 class="project-title">Interior Renovation</h2>
+					<div class="project-description">
+						<p>Our expertise covers a wide range of home improvement projects, including full-scale renovations, elegant finishing work, and innovative design solutions. We're committed to using high-quality materials and staying up-to-date with the latest trends and technologies in home construction.</p>
+						<p>With our team's diverse skills and dedication to excellence, we can tackle any home transformation challenge. From concept to completion, we work closely with our clients to bring their visions to life, creating spaces that are not only beautiful but also perfectly suited to their lifestyle and preferences.</p>
+					</div>
+				</div>
+				<div class="project-image">
+					<img src="/images/demo1.jpg" alt="Interior Renovation" class="project-img">
+				</div>
+			</div>
+
+			<div class="project-item">
+				<div class="project-content">
+					<h2 class="project-title">Outdoor Renovations</h2>
+					<div class="project-description">
+						<p>In addition to our indoor expertise, we also specialize in enhancing outdoor living spaces. Our team designs and constructs inviting patios, decks, and garden areas that become serene retreats for relaxation or vibrant spaces for entertaining guests. We handle everything from sophisticated outdoor lighting installations to the meticulous landscaping that complements the architecture of the home.</p>
+						<p>Our commitment to quality and functionality extends beyond the walls of your home, ensuring that the beauty and craftsmanship of our work is reflected in every corner of your property.</p>
+					</div>
+				</div>
+				<div class="project-image">
+					<img src="/images/PorchComplete.jpg" alt="Outdoor Renovations" class="project-img">
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		color: white;
+		text-align: center;
+		padding: 6rem 0 4rem;
+	}
+
+	.hero .section-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+	}
+
+	.hero .section-subtitle {
+		font-size: 1.3rem;
+		opacity: 0.9;
+	}
+
+	.projects {
+		background: white;
+		padding: 6rem 0;
+	}
+
+	.project-item {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+		margin-bottom: 6rem;
+	}
+
+	.project-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.project-item.reverse {
+		direction: rtl;
+	}
+
+	.project-item.reverse > * {
+		direction: ltr;
+	}
+
+	.project-content {
+		padding: 2rem 0;
+	}
+
+	.project-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #333;
+		margin-bottom: 2rem;
+		line-height: 1.2;
+	}
+
+	.project-description p {
+		font-size: 1.1rem;
+		line-height: 1.7;
+		color: #555;
+		margin-bottom: 1.5rem;
+	}
+
+	.project-description p:last-child {
+		margin-bottom: 0;
+	}
+
+	.project-image {
+		position: relative;
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
+	}
+
+	.project-image:hover {
+		transform: translateY(-5px);
+	}
+
+	.project-img {
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 4rem 0 2rem;
+		}
+
+		.hero .section-title {
+			font-size: 2.5rem;
+		}
+
+		.hero .section-subtitle {
+			font-size: 1.1rem;
+		}
+
+		.projects {
+			padding: 4rem 0;
+		}
+
+		.project-item {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			margin-bottom: 4rem;
+		}
+
+		.project-item.reverse {
+			direction: ltr;
+		}
+
+		.project-content {
+			padding: 1rem 0;
+		}
+
+		.project-title {
+			font-size: 2rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.project-description p {
+			font-size: 1rem;
+		}
+
+		.project-img {
+			height: 300px;
+		}
+	}
+</style> 
