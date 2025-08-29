@@ -11,7 +11,13 @@ const currentPath = Astro.url.pathname;
     <div class="header-content">
       <div class="logo">
         <a href="/" class="logo-link">
-          <span class="logo-text">{siteConfig.name}</span>
+          <div class="logo-container">
+            <img src="/images/logo.png" alt="Silvin Homes Logo" class="logo-image">
+            <span class="logo-text">
+              <span class="logo-first-word">{siteConfig.name.split(' ')[0]}</span>
+              <span class="logo-rest">{siteConfig.name.split(' ').slice(1).join(' ')}</span>
+            </span>
+          </div>
         </a>
       </div>
       
@@ -70,11 +76,31 @@ const currentPath = Astro.url.pathname;
     color: inherit;
   }
 
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .logo-image {
+    height: 1.5rem;
+    width: auto;
+    object-fit: contain;
+  }
+
   .logo-text {
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 400;
     color: #101820;
     font-family: 'Sinkin Sans', system-ui, sans-serif;
+  }
+
+  .logo-first-word {
+    color: #84754e;
+  }
+
+  .logo-rest {
+    color: #101820;
   }
 
   .navigation {
