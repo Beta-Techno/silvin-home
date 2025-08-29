@@ -104,12 +104,8 @@ import { siteConfig } from '../data/site';
 	<section class="map-section section">
 		<div class="container">
 			<h2 class="section-title">Find Us</h2>
-			<div class="map-placeholder">
-				<div class="map-content">
-					<div class="map-icon">🗺️</div>
-					<p>Interactive map will be displayed here</p>
-					<p>Address: {siteConfig.contact.address}</p>
-				</div>
+			<div class="map-container">
+				<div id="map" class="google-map"></div>
 			</div>
 		</div>
 	</section>
@@ -127,7 +123,7 @@ import { siteConfig } from '../data/site';
 
 	.hero .section-title {
 		font-size: 3.5rem;
-		font-weight: 800;
+		font-weight: 500;
 		margin-bottom: 1rem;
 		line-height: 1.2;
 		color: #101820;
@@ -268,34 +264,7 @@ import { siteConfig } from '../data/site';
 		margin: 0;
 	}
 
-	.map-section {
-		background: #f8f9fa;
-	}
 
-	.map-placeholder {
-		background: white;
-		border-radius: 15px;
-		height: 400px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-	}
-
-	.map-content {
-		text-align: center;
-		color: #666;
-	}
-
-	.map-icon {
-		font-size: 4rem;
-		margin-bottom: 1rem;
-		opacity: 0.5;
-	}
-
-	.map-content p {
-		margin: 0.5rem 0;
-	}
 
 	@media (max-width: 768px) {
 		.contact-grid {
@@ -312,11 +281,124 @@ import { siteConfig } from '../data/site';
 			font-size: 1.5rem;
 		}
 
-		.map-placeholder {
-			height: 300px;
-		}
+
+	}
+
+	.map-section {
+		background: white;
+		padding: 6rem 0;
+	}
+
+	.map-container {
+		background: white;
+		overflow: hidden;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		border-radius: 12px;
+	}
+
+	.google-map {
+		width: 100%;
+		height: 500px;
 	}
 </style>
+
+<script>
+	// Google Maps API Key
+	const GOOGLE_MAPS_API_KEY = 'AIzaSyCBVHEO0SiHLqVGwwLWcgJYD70OQ9lXg68';
+
+	// Contact location
+	const contactLocation = {
+		position: { lat: 41.662021056238395, lng: -72.86998926479343 },
+		title: 'Silvin Homes',
+		address: '143 Whiting St, Plainville, CT',
+		details: 'Our office location'
+	};
+
+	let map: any;
+	let marker: any;
+	let infoWindow: any;
+
+	// Initialize Google Map
+	function initMap(): void {
+		if (!document.getElementById('map')) return;
+
+		map = new (window as any).google.maps.Map(document.getElementById('map'), {
+			center: contactLocation.position,
+			zoom: 15,
+			styles: [
+				{
+					featureType: 'poi',
+					elementType: 'labels',
+					stylers: [{ visibility: 'off' }]
+				}
+			]
+		});
+
+		// Create marker
+		marker = new (window as any).google.maps.Marker({
+			position: contactLocation.position,
+			map: map,
+			title: contactLocation.title,
+			icon: {
+				path: (window as any).google.maps.SymbolPath.CIRCLE,
+				scale: 10,
+				fillColor: '#84754e',
+				fillOpacity: 1,
+				strokeColor: '#ffffff',
+				strokeWeight: 2
+			}
+		});
+
+		// Create info window
+		infoWindow = new (window as any).google.maps.InfoWindow({
+			content: `
+				<div style="padding: 10px; max-width: 250px;">
+					<h3 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 16px;">${contactLocation.title}</h3>
+					<p style="margin: 0 0 5px 0; color: #84754e; font-weight: 500; font-size: 14px;">${contactLocation.address}</p>
+					<p style="margin: 0 0 8px 0; color: #4a5568; font-size: 12px; line-height: 1.4;">${contactLocation.details}</p>
+				</div>
+			`
+		});
+
+		// Add click listener to marker
+		marker.addListener('click', () => {
+			infoWindow.open(map, marker);
+		});
+
+		// Open info window by default
+		infoWindow.open(map, marker);
+	}
+
+	// Initialize when DOM is loaded
+	document.addEventListener('DOMContentLoaded', () => {
+		// Load Google Maps API
+		const script = document.createElement('script');
+		script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&callback=initMap&loading=async`;
+		script.async = true;
+		script.defer = true;
+		document.head.appendChild(script);
+	});
+
+	// Make initMap globally available
+	(window as any).initMap = initMap;
+
+	// Handle client-side navigation
+	document.addEventListener('astro:page-load', () => {
+		// Re-initialize map if it doesn't exist or is not properly loaded
+		if (!map || !document.getElementById('map')) {
+			setTimeout(() => {
+				if (document.getElementById('map')) {
+					initMap();
+				}
+			}, 100);
+		} else {
+			// Trigger resize event to fix map display
+			if ((window as any).google && (window as any).google.maps) {
+				(window as any).google.maps.event.trigger(map, 'resize');
+			}
+		}
+	});
+</script>
 
 <script>
 	// Form submission handling

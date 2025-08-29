@@ -6,11 +6,8 @@ import { siteConfig } from '../data/site';
 <Layout title={`Financing - ${siteConfig.name}`}>
 	<section class="hero section">
 		<div class="container">
-			<h1 class="section-title">ELM TREE FUNDING</h1>
-			<div class="hero-subtitle">
-				<p>Financing Provided by External Organization</p>
-				<p>Elm Tree Funding is a seperate entity from Lococo Development</p>
-			</div>
+			<h1 class="section-title">Financing Solutions</h1>
+			<p class="section-subtitle">Expert construction financing to help build your dream home</p>
 		</div>
 	</section>
 
@@ -18,6 +15,7 @@ import { siteConfig } from '../data/site';
 		<div class="container">
 			<div class="content-grid">
 				<div class="text-content">
+					<h2 class="content-title">Construction Financing Expertise</h2>
 					<div class="bio-section">
 						<p>John joined Elm Tree Funding in 2023 with a heavy focus on Construction loans and Construction-to-Permanent loans. With an extensive background in the industry, he has a deep understanding of the unique challenges and opportunities that arise with building a new home. His expertise and personalized approach make him a trusted advisor for clients seeking tailored solutions for their construction financing needs.</p>
 						
@@ -26,32 +24,63 @@ import { siteConfig } from '../data/site';
 				</div>
 
 				<div class="profile-section">
-					<div class="profile-image">
-						<img src="/images/JohnVecchitto.png" alt="John Vecchitto" class="john-image">
-					</div>
-					<div class="profile-info">
-						<h2 class="profile-name">John Vecchitto</h2>
-						<div class="contact-info">
-							<p>john@elmtreefunding.com</p>
-							<p>860-918-0251</p>
-							<p>NMLS# 1127163</p>
+					<div class="profile-card">
+						<div class="profile-image">
+							<img src="/images/JohnVecchitto.png" alt="John Vecchitto" class="john-image">
+						</div>
+						<div class="profile-info">
+							<h3 class="profile-name">John Vecchitto</h3>
+							<p class="profile-title">Construction Loan Specialist</p>
+							<div class="contact-info">
+								<p><strong>Email:</strong> john@elmtreefunding.com</p>
+								<p><strong>Phone:</strong> 860-918-0251</p>
+								<p><strong>NMLS#:</strong> 1127163</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="button-grid">
-				<div class="button-row">
-					<a href="#" class="action-button">ELM TREE FUNDING</a>
-					<a href="#" class="action-button">CONSTRUCTION LOAN</a>
+			<div class="services-section">
+				<h2 class="services-title">Our Financing Services</h2>
+				<div class="services-grid">
+					<div class="service-card">
+						<div class="service-icon">🏗️</div>
+						<h3>Construction Loans</h3>
+						<p>Specialized financing for new home construction projects with flexible terms and competitive rates.</p>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">🏠</div>
+						<h3>Construction-to-Permanent</h3>
+						<p>Seamless transition from construction financing to permanent mortgage with one application.</p>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">📋</div>
+						<h3>Custom Solutions</h3>
+						<p>Tailored financing options designed to meet your specific construction and budget needs.</p>
+					</div>
 				</div>
-				<div class="button-row">
-					<a href="#" class="action-button">ELM PROFILE</a>
-					<a href="#" class="action-button">ZILLOW PROFILE</a>
+			</div>
+
+			<div class="cta-section">
+				<h2 class="cta-title">Ready to Get Started?</h2>
+				<p class="cta-subtitle">Apply now for construction financing</p>
+				<div class="cta-buttons">
+					<a href="https://elmtreefundingsignup.my1003app.com/1127163/register" target="_blank" class="btn btn-primary">Apply Now</a>
 				</div>
-				<div class="button-row">
-					<a href="#" class="action-button">APPLY NOW</a>
-					<div class="empty-button"></div>
+			</div>
+
+			<div class="action-buttons-section">
+				<h2 class="action-buttons-title">Quick Actions</h2>
+				<div class="action-buttons-grid">
+					<div class="button-row">
+						<a href="https://www.elmtreefunding.com/" target="_blank" class="action-button">ELM TREE FUNDING</a>
+						<a href="https://www.elmtreefunding.com/purchase-refinance/one-time-close-construction-loan" target="_blank" class="action-button">CONSTRUCTION LOAN</a>
+					</div>
+					<div class="button-row">
+						<a href="#" class="action-button">ELM PROFILE</a>
+						<div class="empty-button"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -60,79 +89,113 @@ import { siteConfig } from '../data/site';
 
 <style>
 	.hero {
-		background: #f5f5f5;
-		color: #2d5016;
+		background: #f8f9fa;
+		color: #101820;
 		text-align: center;
-		padding: 3rem 0 2rem;
+		padding: 6rem 0 4rem;
+		position: relative;
+		border-bottom: 1px solid #e9ecef;
 	}
 
 	.hero .section-title {
-		font-size: 2.8rem;
-		font-weight: 700;
-		color: #2d5016;
-		margin-bottom: 1.5rem;
-		font-family: serif;
-		text-decoration: underline;
-		text-decoration-color: #2d5016;
-		text-decoration-thickness: 2px;
+		font-size: 3.5rem;
+		font-weight: 500;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+		color: #101820;
+		position: relative;
 	}
 
-	.hero-subtitle {
-		margin-top: 1rem;
+	.hero .section-subtitle {
+		font-size: 1.3rem;
+		opacity: 0.8;
+		color: #6c757d;
+		font-weight: 500;
 	}
 
-	.hero-subtitle p {
-		font-size: 1rem;
-		color: #2d5016;
-		margin: 0.3rem 0;
-		font-family: serif;
+	.hero .section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80px;
+		height: 4px;
+		background: #84754e;
 	}
 
 	.financing-content {
-		background: #f5f5f5;
-		padding: 3rem 0 4rem;
+		background: white;
+		padding: 6rem 0;
 	}
 
 	.content-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 3rem;
-		margin-bottom: 3rem;
+		grid-template-columns: 2fr 1fr;
+		gap: 4rem;
+		margin-bottom: 4rem;
 		align-items: start;
-		max-width: 1000px;
+		max-width: 1200px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	.text-content {
-		color: #2d5016;
-		padding-right: 1rem;
+	.content-title {
+		font-size: 2.5rem;
+		font-weight: 500;
+		color: #101820;
+		margin-bottom: 2rem;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
 	.bio-section p {
-		font-size: 1rem;
-		line-height: 1.6;
-		color: #2d5016;
-		margin-bottom: 1.2rem;
-		font-family: serif;
+		font-size: 1.1rem;
+		line-height: 1.7;
+		color: #4a5568;
+		margin-bottom: 1.5rem;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
-	.profile-section {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		text-align: left;
-		padding-left: 1rem;
+	.profile-card {
+		background: #f8f9fa;
+		padding: 2rem;
+		border-radius: 12px;
+		border: 2px solid transparent;
+		transition: all 0.3s ease;
+		position: relative;
+	}
+
+	.profile-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: #84754e;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	.profile-card:hover::before {
+		transform: scaleX(1);
+	}
+
+	.profile-card:hover {
+		border-color: #84754e;
+		transform: translateY(-4px);
+		box-shadow: 0 10px 30px rgba(132, 117, 78, 0.15);
 	}
 
 	.profile-image {
-		width: 180px;
-		height: 180px;
+		width: 80%;
+		max-width: 350px;
+		height: 350px;
 		border-radius: 8px;
 		overflow: hidden;
-		margin-bottom: 1rem;
+		margin: 0 auto 1.5rem;
 		background: #e0e0e0;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 	}
 
 	.john-image {
@@ -143,90 +206,283 @@ import { siteConfig } from '../data/site';
 	}
 
 	.profile-name {
-		font-size: 1.8rem;
-		font-weight: 700;
-		color: #2d5016;
-		margin-bottom: 0.8rem;
-		font-family: serif;
+		font-size: 1.5rem;
+		font-weight: 500;
+		color: #101820;
+		margin-bottom: 0.5rem;
+		text-align: center;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.profile-title {
+		font-size: 1rem;
+		color: #84754e;
+		font-weight: 500;
+		margin-bottom: 1rem;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
 	.contact-info p {
-		font-size: 0.95rem;
-		color: #2d5016;
-		margin: 0.3rem 0;
-		font-family: serif;
+		font-size: 0.9rem;
+		color: #4a5568;
+		margin: 0.5rem 0;
+		text-align: center;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
-	.button-grid {
+	.services-section {
+		margin: 4rem 0;
+	}
+
+	.services-title {
+		font-size: 2.5rem;
+		font-weight: 500;
+		color: #101820;
+		text-align: center;
+		margin-bottom: 3rem;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.service-card {
+		background: white;
+		padding: 2.5rem;
+		border: 2px solid transparent;
+		border-radius: 12px;
+		text-align: center;
+		transition: all 0.3s ease;
+		position: relative;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	}
+
+	.service-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: #84754e;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	.service-card:hover::before {
+		transform: scaleX(1);
+	}
+
+	.service-card:hover {
+		border-color: #84754e;
+		transform: translateY(-4px);
+		box-shadow: 0 10px 30px rgba(132, 117, 78, 0.15);
+	}
+
+	.service-icon {
+		font-size: 3rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.service-card h3 {
+		font-size: 1.3rem;
+		font-weight: 500;
+		color: #101820;
+		margin-bottom: 1rem;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.service-card p {
+		font-size: 1rem;
+		color: #4a5568;
+		line-height: 1.6;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.cta-section {
+		background: #f8f9fa;
+		padding: 4rem;
+		border-radius: 12px;
+		text-align: center;
+		margin-top: 4rem;
+	}
+
+	.cta-title {
+		font-size: 2.5rem;
+		font-weight: 500;
+		color: #101820;
+		margin-bottom: 1rem;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.cta-subtitle {
+		font-size: 1.2rem;
+		color: #6c757d;
+		margin-bottom: 2rem;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.btn-primary {
+		background: #84754e;
+		color: white;
+		padding: 1rem 2rem;
+		text-decoration: none;
+		border-radius: 0;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		transition: all 0.3s ease;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.btn-primary:hover {
+		background: #6b6140;
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(132, 117, 78, 0.3);
+	}
+
+	.btn-secondary {
+		background: transparent;
+		color: #84754e;
+		padding: 1rem 2rem;
+		text-decoration: none;
+		border: 2px solid #84754e;
+		border-radius: 0;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		transition: all 0.3s ease;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.btn-secondary:hover {
+		background: #84754e;
+		color: white;
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(132, 117, 78, 0.3);
+	}
+
+	.action-buttons-section {
+		margin-top: 4rem;
+		text-align: center;
+	}
+
+	.action-buttons-title {
+		font-size: 2.5rem;
+		font-weight: 500;
+		color: #101820;
+		margin-bottom: 3rem;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
+	}
+
+	.action-buttons-grid {
 		display: flex;
 		flex-direction: column;
-		gap: 0.8rem;
-		max-width: 500px;
+		gap: 1rem;
+		max-width: 600px;
 		margin: 0 auto;
 	}
 
 	.button-row {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 0.8rem;
+		gap: 1rem;
 	}
 
 	.action-button {
-		background: #2d5016;
+		background: #84754e;
 		color: white;
-		padding: 0.875rem 1.25rem;
+		padding: 1rem 1.5rem;
 		text-decoration: none;
-		border-radius: 6px;
+		border-radius: 0;
 		text-align: center;
-		font-weight: 600;
+		font-weight: 500;
 		font-size: 0.9rem;
 		text-transform: uppercase;
-		transition: background 0.3s ease;
+		transition: all 0.3s ease;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		min-height: 45px;
-		letter-spacing: 0.5px;
+		min-height: 50px;
+		letter-spacing: 1px;
+		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
 	.action-button:hover {
-		background: #1a3a0f;
+		background: #6b6140;
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(132, 117, 78, 0.3);
 	}
 
 	.empty-button {
 		background: transparent;
 		border: 2px solid transparent;
-		min-height: 45px;
+		min-height: 50px;
 	}
 
 	@media (max-width: 768px) {
+		.hero {
+			padding: 4rem 0 3rem;
+		}
+
 		.hero .section-title {
-			font-size: 2.2rem;
+			font-size: 2.5rem;
 		}
 
 		.content-grid {
 			grid-template-columns: 1fr;
-			gap: 2rem;
-			padding: 0 1rem;
+			gap: 3rem;
 		}
 
-		.text-content {
-			padding-right: 0;
+		.content-title {
+			font-size: 2rem;
 		}
 
-		.profile-section {
-			padding-left: 0;
+		.services-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.service-card {
+			padding: 2rem;
+		}
+
+		.cta-section {
+			padding: 3rem 2rem;
+		}
+
+		.cta-title {
+			font-size: 2rem;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
 			align-items: center;
-			text-align: center;
 		}
 
-		.profile-image {
-			width: 150px;
-			height: 150px;
+		.btn-primary,
+		.btn-secondary {
+			width: 100%;
+			max-width: 300px;
 		}
 
-		.profile-name {
-			font-size: 1.6rem;
+		.action-buttons-title {
+			font-size: 2rem;
 		}
 
 		.button-row {
@@ -234,8 +490,14 @@ import { siteConfig } from '../data/site';
 		}
 
 		.action-button {
-			padding: 0.75rem 1rem;
+			padding: 0.875rem 1rem;
 			font-size: 0.85rem;
+		}
+
+		.profile-image {
+			width: 90%;
+			max-width: 280px;
+			height: 280px;
 		}
 	}
 </style> 

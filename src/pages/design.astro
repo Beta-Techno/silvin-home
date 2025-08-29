@@ -7,6 +7,7 @@ import { siteConfig } from '../data/site';
 	<section class="hero section">
 		<div class="container">
 			<h1 class="section-title">Design your dream home</h1>
+			<p class="section-subtitle">Transform your vision into reality with our expert design services</p>
 		</div>
 	</section>
 
@@ -90,20 +91,27 @@ import { siteConfig } from '../data/site';
 		background: #f8f9fa;
 		color: #101820;
 		text-align: center;
-		padding: 8rem 0 6rem;
+		padding: 6rem 0 4rem;
 		position: relative;
 		overflow: hidden;
 		border-bottom: 1px solid #e9ecef;
 	}
 
 	.hero .section-title {
-		font-size: 4rem;
-		font-weight: 900;
+		font-size: 3.5rem;
+		font-weight: 500;
 		margin-bottom: 1rem;
-		line-height: 1.1;
+		line-height: 1.2;
 		color: #101820;
 		position: relative;
 		z-index: 2;
+	}
+
+	.hero .section-subtitle {
+		font-size: 1.3rem;
+		opacity: 0.8;
+		color: #6c757d;
+		font-weight: 500;
 	}
 
 	.hero .section-title::after {
@@ -112,34 +120,16 @@ import { siteConfig } from '../data/site';
 		bottom: -15px;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 100px;
+		width: 80px;
 		height: 4px;
 		background: #84754e;
-		z-index: 2;
 	}
 
-	.hero::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: rgba(0, 0, 0, 0.1);
-		z-index: 1;
-	}
+
 
 	.hero .container {
 		position: relative;
 		z-index: 2;
-	}
-
-	.hero .section-title {
-		font-size: 4rem;
-		font-weight: 800;
-		margin-bottom: 1.5rem;
-		line-height: 1.1;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 	}
 
 	.design-content {
@@ -177,7 +167,7 @@ import { siteConfig } from '../data/site';
 
 	.form-title {
 		font-size: 2.25rem;
-		font-weight: 700;
+		font-weight: 500;
 		color: #1a1a1a;
 		margin-bottom: 2.5rem;
 		text-align: center;
@@ -208,7 +198,7 @@ import { siteConfig } from '../data/site';
 	}
 
 	.form-group label {
-		font-weight: 600;
+		font-weight: 500;
 		color: #2d3748;
 		font-size: 1rem;
 		letter-spacing: 0.025em;
@@ -260,7 +250,7 @@ import { siteConfig } from '../data/site';
 		border: none;
 		border-radius: 0;
 		font-size: 1.125rem;
-		font-weight: 600;
+		font-weight: 500;
 		cursor: pointer;
 		transition: all 0.3s ease;
 		margin-top: 1.5rem;
@@ -327,7 +317,7 @@ import { siteConfig } from '../data/site';
 
 	.video-caption h3 {
 		font-size: 1.75rem;
-		font-weight: 700;
+		font-weight: 500;
 		color: #1a1a1a;
 		margin-bottom: 0.75rem;
 	}
@@ -351,7 +341,7 @@ import { siteConfig } from '../data/site';
 
 	@media (max-width: 768px) {
 		.hero {
-			padding: 6rem 0 4rem;
+			padding: 4rem 0 3rem;
 		}
 
 		.hero .section-title {

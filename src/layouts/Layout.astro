@@ -40,8 +40,31 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 	/* Sinkin Sans Font Face Declarations */
 	@font-face {
 		font-family: 'Sinkin Sans';
-		src: url('/fonts/sinkinsans-400regular-webfont.woff2') format('woff2'),
-			 url('/fonts/sinkinsans-400regular-webfont.woff') format('woff');
+		src: url('/fonts/sinkinsans_100thin_macroman/SinkinSans-100Thin-webfont.woff') format('woff');
+		font-weight: 100;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Sinkin Sans';
+		src: url('/fonts/sinkinsans_200xlight_macroman/SinkinSans-200XLight-webfont.woff') format('woff');
+		font-weight: 200;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Sinkin Sans';
+		src: url('/fonts/sinkinsans_300light_macroman/SinkinSans-300Light-webfont.woff') format('woff');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Sinkin Sans';
+		src: url('/fonts/sinkinsans_400regular_macroman/SinkinSans-400Regular-webfont.woff') format('woff');
 		font-weight: 400;
 		font-style: normal;
 		font-display: swap;
@@ -49,8 +72,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 
 	@font-face {
 		font-family: 'Sinkin Sans';
-		src: url('/fonts/sinkinsans-400italic-webfont.woff2') format('woff2'),
-			 url('/fonts/sinkinsans-400italic-webfont.woff') format('woff');
+		src: url('/fonts/sinkinsans_400italic_macroman/SinkinSans-400Italic-webfont.woff') format('woff');
 		font-weight: 400;
 		font-style: italic;
 		font-display: swap;
@@ -58,8 +80,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 
 	@font-face {
 		font-family: 'Sinkin Sans';
-		src: url('/fonts/sinkinsans-500medium-webfont.woff2') format('woff2'),
-			 url('/fonts/sinkinsans-500medium-webfont.woff') format('woff');
+		src: url('/fonts/sinkinsans_500medium_macroman/SinkinSans-500Medium-webfont.woff') format('woff');
 		font-weight: 500;
 		font-style: normal;
 		font-display: swap;
@@ -67,8 +88,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 
 	@font-face {
 		font-family: 'Sinkin Sans';
-		src: url('/fonts/sinkinsans-600semibold-webfont.woff2') format('woff2'),
-			 url('/fonts/sinkinsans-600semibold-webfont.woff') format('woff');
+		src: url('/fonts/sinkinsans_600semibold_macroman/SinkinSans-600SemiBold-webfont.woff') format('woff');
 		font-weight: 600;
 		font-style: normal;
 		font-display: swap;
@@ -76,8 +96,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 
 	@font-face {
 		font-family: 'Sinkin Sans';
-		src: url('/fonts/sinkinsans-700bold-webfont.woff2') format('woff2'),
-			 url('/fonts/sinkinsans-700bold-webfont.woff') format('woff');
+		src: url('/fonts/sinkinsans_700bold_macroman/SinkinSans-700Bold-webfont.woff') format('woff');
 		font-weight: 700;
 		font-style: normal;
 		font-display: swap;
@@ -85,8 +104,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 
 	@font-face {
 		font-family: 'Sinkin Sans';
-		src: url('/fonts/sinkinsans-800black-webfont.woff2') format('woff2'),
-			 url('/fonts/sinkinsans-800black-webfont.woff') format('woff');
+		src: url('/fonts/sinkinsans_800black_macroman/SinkinSans-800Black-webfont.woff') format('woff');
 		font-weight: 800;
 		font-style: normal;
 		font-display: swap;
@@ -94,8 +112,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 
 	@font-face {
 		font-family: 'Sinkin Sans';
-		src: url('/fonts/sinkinsans-900xblack-webfont.woff2') format('woff2'),
-			 url('/fonts/sinkinsans-900xblack-webfont.woff') format('woff');
+		src: url('/fonts/sinkinsans_900xblack_macroman/SinkinSans-900XBlack-webfont.woff') format('woff');
 		font-weight: 900;
 		font-style: normal;
 		font-display: swap;
@@ -132,7 +149,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 
 	.section-title {
 		font-size: 2.5rem;
-		font-weight: 800;
+		font-weight: 500;
 		margin-bottom: 1rem;
 		text-align: center;
 		color: #101820;
@@ -147,7 +164,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 		max-width: 600px;
 		margin-left: auto;
 		margin-right: auto;
-		font-weight: 500;
+		font-weight: 400;
 		font-family: 'Sinkin Sans', system-ui, sans-serif;
 	}
 
@@ -162,7 +179,7 @@ const { title = siteConfig.name, description = siteConfig.description } = Astro.
 		border: none;
 		cursor: pointer;
 		font-size: 0.9rem;
-		font-weight: 600;
+		font-weight: 500;
 		font-family: 'Sinkin Sans', system-ui, sans-serif;
 		text-transform: uppercase;
 		letter-spacing: 1px;
